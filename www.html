@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Profile</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        nav {
+            background: #615d5d;
+            padding: 10px 20px;
+            text-align: left;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        section {
+            padding: 30px 60px;
+            min-height: 200px; /* تم تقليل الارتفاع */
+        }
+
+        #section1 { background: #f2f2f2; }
+        #section2 { background: #cce5ff; }
+        #section3 { background: #fff3cd; }
+
+        h1, h2 {
+            color: #003366;
+        }
+
+        h4 {
+            color: #333;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#section1">Personal Profile</a>
+        <a href="#section2">University</a>
+        <a href="#section3">Gmail</a>
+    </nav>
+
+    <section id="section1">
+        <h1 style="text-align: center;">The Biography</h1>
+        <p style="color: blue;">
+            <h2>About me</h2>
+            Anas Saleh is a student at Tafila Technical University, passionate about programming and modern technologies.
+He is proficient in multiple languages such as Python, Java, C++, HTML, CSS, and JavaScript, and has experience in Data Retrieval and Analysis.
+He strives to continuously develop his skills and believes that creativity in programming is his path toward a promising future in the field of technology. 🚀
+        </p>
+        <h4>My name: Anas Saleh Aletaywi</h4>
+        <h4>My age: 20</h4>
+        <h4>My hometown: Tafila</h4>
+    </section>
+
+    <section id="section2">
+        <h2>University</h2>
+        <h4>University number: 320230601061</h4>
+        <h4>Specialization: Computer Information Systems</h4>
+        <h4>Year of study: Second</h4>
+    </section>
+
+    <section id="section3">
+        <h2>Contact</h2>
+        <h4>Email: anasdoo1236666@gmail.com</h4>
+        <h4>Phone number: 0775171824</h4>
+    </section>
+
+</body>
+</html>
