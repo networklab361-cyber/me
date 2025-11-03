@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KM → Miles</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.A {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+button {
+    color: white;
+    background-color: rgb(154, 223, 235);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(100, 200, 220);
+}
+
+#result {
+    background-color: rgb(147, 245, 196);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.B {
+    background-color: rgb(161, 68, 6);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<div class="A">
+    <label for="KMinput">Enter distance in kilometers:</label><br>
+    <input type="number" id="KMinput" placeholder="Enter kilometers"><br><br>
+    <button onclick="convertToMiles()">Convert</button>
+    <p id="result"></p>
+</div>
+
+<div class="B">
+    <img src="https://www.transum.org/maths/activity/units/MileometerPost.png" width="600" height="400">
+</div>
+
+<script>
+function convertToMiles(){
+    let a = document.getElementById("KMinput").value;
+    if(a === "") {
+        document.getElementById("result").innerHTML = "Please enter a number!";
+        return;
+    }
+    let miles = a * 0.621371;
+    document.getElementById("result").innerHTML = `${a} km = ${miles.toFixed(2)} miles`;
+}
+</script>
+</body>
+</html>
