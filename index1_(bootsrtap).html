@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Bookstore</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    /* Background image */
+    body {
+      background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      padding-top: 70px; /* space for fixed navbar */
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    /* translucent container to make content readable on background */
+    .site-container {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(2px);
+      border-radius: 10px;
+      padding: 24px;
+    }
+    .card-img-top { height: 300px; object-fit: cover; }
+    /* small screens tweak for rtl */
+    @media (max-width: 576px) {
+      .card-img-top { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <i class="bi bi-book-fill me-2"></i>
+        My Bookstore
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#bookList">الكتب</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cartSection">السلة</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#map">الموقع</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container site-container mt-3">
+    <!-- HERO -->
+    <div class="hero text-center py-4 mb-4">
+      <h1 class="display-4 text-warning"><i class="bi bi-book-fill"></i> Welcome to My Bookstore</h1>
+      <p class="lead">An interactive lab activity using HTML, Bootstrap, JavaScript, and CSS</p>
+    </div>
+
+    <!-- SEARCH & FILTER -->
+    <div class="row mb-4 align-items-center">
+      <div class="col-md-6 mb-2">
+        <input id="searchInput" type="search" class="form-control" placeholder="ابحث عن كتاب بالعنوان أو المؤلف...">
+      </div>
+      <div class="col-md-6 text-md-start text-center">
+        <span class="badge bg-secondary me-2">عدد الكتب: <span id="booksCount">0</span></span>
+        <button id="clearCartBtn" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> تفريغ السلة</button>
+      </div>
+    </div>
+
+    <!-- BOOK LIST -->
+    <section id="bookList" class="row">
+      <!-- cards will be injected here -->
+    </section>
+
+    <!-- CART -->
+    <div id="cartSection" class="mt-5 p-4 bg-dark rounded text-light">
+      <h3><i class="bi bi-cart-fill"></i> Cart</h3>
+      <ul id="cartList" class="list-group mt-3"></ul>
+      <div class="mt-3 d-flex justify-content-between align-items-center">
+        <strong>المجموع: <span id="cartTotal">$0</span></strong>
+        <button id="checkoutBtn" class="btn btn-success">الدفع <i class="bi bi-credit-card"></i></button>
+      </div>
+    </div>
+
+    <!-- MAP -->
+    <div id="map" class="mt-5">
+      <h4 class="text-warning"><i class="bi bi-geo-alt-fill"></i> Visit Our Store</h4>
+      <div class="ratio ratio-16x9 rounded">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.0072247122144!2d-106.6172784847579!3d35.08533338032161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87220a3155ac0183%3A0xb4f97f9c963e8c2a!2sCentral%20Ave%20NW%2C%20Albuquerque%2C%20NM!5e0!3m2!1sen!2sus!4v1670906446583!5m2!1sen!2sus"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center mt-5 py-4">
+      <div class="container">
+        <p class="mb-1">&copy; 2025 My Bookstore. Built by students in Web Programming Lab.</p>
+        <p class="mb-0"><i class="bi bi-geo-alt-fill"></i> Central Ave, Albuquerque, NM</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // بيانات الكتب
+    const books = [
+      { id: 1, title: "The Pragmatic Programmer", author: "Andy Hunt", price: 30, img: "https://m.media-amazon.com/images/I/41as+WafrFL.jpg" },
+      { id: 2, title: "Clean Code", author: "Robert C. Martin", price: 25, img: "https://m.media-amazon.com/images/I/41-sN-mzwKL.jpg" },
+      { id: 3, title: "JavaScript: The Good Parts", author: "Douglas Crockford", price: 20, img: "https://m.media-amazon.com/images/I/81kqrwS1nNL.jpg" }
+    ];
+
+    // عربة التسوق
+    const cart = [];
+
+    // عرض الكتب ديناميكياً
+    function displayBooks(filter = '') {
+      const container = document.getElementById('bookList');
+      container.innerHTML = '';
+      const normalizedFilter = filter.trim().toLowerCase();
+      const filtered = books.filter(b =>
+        b.title.toLowerCase().includes(normalizedFilter) ||
+        b.author.toLowerCase().includes(normalizedFilter)
+      );
+
+      document.getElementById('booksCount').textContent = filtered.length;
+
+      filtered.forEach(book => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 mb-4';
+        col.innerHTML = `
+          <div class="card h-100 shadow-sm">
+            <img src="${book.img}" class="card-img-top" alt="${book.title}">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${book.title}</h5>
+              <p class="card-text">المؤلف: ${book.author}</p>
+              <p class="card-text text-success fw-bold">$${book.price}</p>
+              <div class="mt-auto d-flex gap-2">
+                <button class="btn btn-primary w-100" onclick="addToCart(${book.id})">Add to Cart</button>
+                <button class="btn btn-outline-secondary" onclick="showDetails(${book.id})"><i class="bi bi-info-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(col);
+      });
+    }
+
+    function showDetails(id) {
+      const book = books.find(b => b.id === id);
+      if (!book) return;
+      alert(`${book.title} \nالمؤلف: ${book.author} \nالسعر: $${book.price}`);
+    }
+
+    function addToCart(bookId) {
+      const book = books.find(b => b.id === bookId);
+      if (!book) return;
+      cart.push(book);
+      updateCart();
+    }
+
+    function updateCart() {
+      const list = document.getElementById('cartList');
+      list.innerHTML = '';
+      let total = 0;
+      cart.forEach((book, index) => {
+        total += book.price;
+        const item = document.createElement('li');
+        item.className = 'list-group-item d-flex justify-content-between align-items-center';
+        item.innerHTML = `
+          <div>
+            <strong>${book.title}</strong> <div class="small">${book.author}</div>
+          </div>
+          <div class="d-flex align-items-center">
+            <span class="badge bg-primary rounded-pill">$${book.price}</span>
+            <button class="btn btn-sm btn-danger ms-2" onclick="removeFromCart(${index})"><i class="bi bi-trash"></i></button>
+          </div>
+        `;
+        list.appendChild(item);
+      });
+      document.getElementById('cartTotal').textContent = `$${total}`;
+    }
+
+    function removeFromCart(index) {
+      if (index < 0 || index >= cart.length) return;
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    // Clear cart
+    document.getElementById('clearCartBtn').addEventListener('click', () => {
+      if (!cart.length) return alert('السلة فارغة');
+      if (confirm('هل تريد تفريغ السلة؟')) {
+        cart.length = 0;
+        updateCart();
+      }
+    });
+
+    // Checkout (simple behaviour)
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      if (!cart.length) return alert('السلة فارغة');
+      alert('شكراً لطلبك! هذه نسخة تجريبية، سيتم مسح السلة الآن.');
+      cart.length = 0;
+      updateCart();
+    });
+
+    // Search handler
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      displayBooks(e.target.value);
+    });
+
+    // Initialization
+    displayBooks();
+  </script>
+</body>
+</html>
