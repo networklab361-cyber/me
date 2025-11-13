@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anas Saleh — Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    header.hero { background: linear-gradient(90deg, rgba(2,6,23,0.85), rgba(13,37,63,0.85)), url('https://images.unsplash.com/photo-1523475496153-3d6cc1f8d9b9') center/cover no-repeat; color: white; }
+    .card-img-top { height: 220px; object-fit: cover; }
+    .badge-custom { background:#0d6efd; }
+    /* rtl small tweaks */
+    @media (max-width: 576px) { .card-img-top { height:160px; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <i class="bi bi-person-circle me-2"></i>
+        Anas Saleh
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">نبذة</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">المهارات</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">المشاريع</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">تواصل</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero py-5 mb-4">
+    <div class="container text-center py-5">
+      <h1 class="display-5 fw-bold">أنس صالح — مطور وهاوٍ للتقنية</h1>
+      <p class="lead">طالب في جامعة الطفيلة التقنية — نظم معلومات حاسوبية. مهتم بالبرمجة، تحليلات البيانات، وتطوير الويب.</p>
+      <a href="#projects" class="btn btn-primary btn-lg mt-3">عرض المشاريع</a>
+    </div>
+  </header>
+
+  <main class="container mb-5">
+    <!-- ABOUT -->
+    <section id="about" class="mb-5">
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center mb-3">
+          <img src="https://avatars.githubusercontent.com/u/000?v=4" alt="Anas" class="rounded-circle img-fluid" style="width:160px; height:160px; object-fit:cover;">
+        </div>
+        <div class="col-md-8">
+          <h2>نبذة عني</h2>
+          <p>أنس صالح طالب في جامعة الطفيلة التقنية، شغوف بالبرمجة والتقنيات الحديثة. أعمل على مشاريع شخصية وتعلمت Python, Java, C++, HTML, CSS, JavaScript، وأعمل على مشاريع تحليل بيانات وتطوير واجهات.</p>
+          <div class="row">
+            <div class="col-sm-6">
+              <ul class="list-unstyled">
+                <li><strong>الاسم:</strong> أنس صالح الليتاوي</li>
+                <li><strong>العمر:</strong> 20</li>
+                <li><strong>المدنية:</strong> الطفيلة</li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-unstyled">
+                <li><strong>الجامعة:</strong> جامعة الطفيلة التقنية</li>
+                <li><strong>التخصص:</strong> نظم معلومات حاسوبية</li>
+                <li><strong>السنة:</strong> الثانية</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="mb-5">
+      <h3>المهارات</h3>
+      <div class="row g-3">
+        <div class="col-md-3 col-6">
+          <div class="card p-3 text-center h-100">
+            <i class="bi bi-code-slash fs-1 mb-2"></i>
+            <h6>البرمجة</h6>
+            <p class="small mb-0">Python, Java, C++</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card p-3 text-center h-100">
+            <i class="bi bi-layout-text-window-reverse fs-1 mb-2"></i>
+            <h6>الويب</h6>
+            <p class="small mb-0">HTML, CSS, JavaScript, Bootstrap</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card p-3 text-center h-100">
+            <i class="bi bi-bar-chart-line fs-1 mb-2"></i>
+            <h6>البيانات</h6>
+            <p class="small mb-0">تحليل البيانات، استرجاع البيانات</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="card p-3 text-center h-100">
+            <i class="bi bi-terminal fs-1 mb-2"></i>
+            <h6>أدوات</h6>
+            <p class="small mb-0">Git, GitHub, VS Code</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="mb-5">
+      <h3>مشاريع مختارة</h3>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df" class="card-img-top" alt="project">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Bookstore Demo</h5>
+              <p class="card-text small">موقع عرض كتب تفاعلي باستخدام Bootstrap و JavaScript — يحتوي على سلة، بحث، وخرائط.</p>
+              <div class="mt-auto">
+                <a href="#" class="btn btn-outline-primary btn-sm">عرض الكود</a>
+                <a href="#" class="btn btn-primary btn-sm ms-2">فتح المشروع</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" class="card-img-top" alt="project">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Data Analysis</h5>
+              <p class="card-text small">مشروع تحليل بيانات باستخدام Python و Pandas.</p>
+              <div class="mt-auto">
+                <a href="#" class="btn btn-outline-primary btn-sm">عرض الكود</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1532619187603-5fbc6f4d8d6a" class="card-img-top" alt="project">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Interactive Labs</h5>
+              <p class="card-text small">تمارين مختبرية تفاعلية لتعلم DOM و JavaScript.</p>
+              <div class="mt-auto">
+                <a href="#" class="btn btn-outline-primary btn-sm">عرض الكود</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mb-5">
+      <h3>تواصل</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="list-unstyled">
+            <li><strong>الإيميل:</strong> anasdoo1236666@gmail.com</li>
+            <li><strong>الهاتف:</strong> 0775171824</li>
+            <li><strong>الموقع:</strong> الطفيلة، الأردن</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <form id="contactForm">
+            <div class="mb-3">
+              <label class="form-label">الاسم</label>
+              <input class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">الرسالة</label>
+              <textarea class="form-control" rows="3" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">إرسال</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-dark text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <small>&copy; 2025 Anas Saleh</small>
+      <div>
+        <a class="text-white me-2" href="#"><i class="bi bi-github"></i></a>
+        <a class="text-white me-2" href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // تعامل بسيط مع الفورم (محلي)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('تم إرسال الرسالة — شكراً لتواصلك!');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
